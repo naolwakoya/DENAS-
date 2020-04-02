@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -24,5 +25,4 @@ private:
     Ui::MainWindow *ui;
     bool state;
 };
-
 #endif // MAINWINDOW_H

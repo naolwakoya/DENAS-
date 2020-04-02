@@ -18,8 +18,7 @@ class Session : public QObject
         int getPower() const;
         std::string getName() const;
 
-        void beginTimer(); // begin timer with duration
-        void pauseTimer(); // pause timer
+        void pauseOrResumeTimer(); // pause timer
         void endTimer(); // end timer
 
     public slots:
