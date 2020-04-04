@@ -510,6 +510,7 @@ void MainWindow::TimeSlot() {
     if (t.toString("h:m:ss") == "23:59:59") {
         timer->stop();
         ui->tbScreen->setText("Treatment complete!");
+        qDebug() << "Session complete";
     }
     else if(state == false || electrode == false) { //if device switches off or electrode is off stop timer
         timer->stop();
@@ -523,7 +524,7 @@ void MainWindow::TimeSlot() {
         if ((counter != duration) && (counter % 60) == 0 ) //if counter is at minute mark excluding start time
         {
             bat.drainLevel(freq.getPower(), prog.getPower());
-            if(bat.getLevel() == 0)
+            if(bat.getLevel() == 0) //when battery = 0 it shuts off
             {
                 ui->tbScreen->setStyleSheet("background-color: rgb(0, 0, 0)");
                 ui->tbScreen->clear();

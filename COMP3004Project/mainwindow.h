@@ -21,8 +21,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    QTimer *timer;
-    QTime *time;
 
 private slots:
     void on_pbPower_clicked();
@@ -44,12 +42,14 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QTimer *timer;
+    QTime *time;
     Battery bat;
     Program prog;
     Frequency freq;
     bool state;
     bool electrode;
-    int screen; //0 - off, 1 - Main Menu, 2 - Programs, 3 - Frequency 4  - Program Power Level 5 - Frequency Power Level
+    int screen; //0 - off, 1 - Main Menu, 2 - Programs, 3 - Frequency 4  - Program Power Level 5 - Frequency Power Level 6- Time 7 - Session
     int selection; //0 - first option, 1 - second option etc.
     int FL, PL;
     int duration;
